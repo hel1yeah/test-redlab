@@ -1,9 +1,14 @@
 <template>
-  <div></div>
+  <section-home> </section-home>
 </template>
 
 <script>
-export default {};
+import SectionHome from '@/views/SectionHome.vue';
+export default {
+  components: {
+    SectionHome,
+  },
+};
 </script>
 
 <style></style>
