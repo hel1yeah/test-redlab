@@ -81,6 +81,10 @@ export default {
 @import '../assets/scss/_mixin.scss';
 
 .header {
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .header__inner {
@@ -103,6 +107,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: $primary-color;
 }
 .header__swith-button {
     width: 55px;
