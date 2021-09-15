@@ -1,0 +1,10 @@
+@mixin myFlex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+$purple-color: #5a30f0;
+$primary-color: #ffffff;
+$black-color: #404040;
+$text-secondary: #636c81;
