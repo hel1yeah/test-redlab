@@ -1,7 +1,7 @@
 <template>
   <section class="cards">
     <div class="container">
-      <div class="cards--inner">
+      <div class="cards-inner">
         <div class="card" v-for="card in cards" :key="card">
           <div class="card__article-text">{{ card.article }}</div>
           <div class="card__text">{{ card.text }}</div>
@@ -13,6 +13,8 @@
 </template>
 
 <script>
+import { gsap, ScrollTrigger, Draggable, MotionPathPlugin } from 'gsap/all'
+
 export default {
   data() {
     return {
@@ -44,6 +46,25 @@ export default {
       ],
     }
   },
+  methods: {
+    cardFrom() {
+      gsap.from('.card', {
+        scrollTrigger: {
+          trigger: '.card',
+          start: 'top bottom',
+          toggleActions: 'play none none none',
+        },
+        duration: 1.5,
+        y: 50,
+        opacity: 0,
+        ease: 'power2.inOut',
+        stagger: 0.4,
+      })
+    },
+  },
+  mounted() {
+    this.cardFrom()
+  },
 }
 </script>
 
@@ -54,7 +75,7 @@ export default {
   margin: 73px 0 0 0;
 }
 
-.cards--inner {
+.cards-inner {
   @include myFlex;
 }
 
@@ -62,18 +83,20 @@ export default {
   border-radius: 8px;
   background-color: $light-grey;
   width: 300px;
-
   height: 328px;
-
   text-align: center;
   @include myFlex;
   flex-direction: column;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
+}
+.card:hover .card__article-text {
+  top: 0%;
 }
 .card__article-text {
   position: absolute;
-  top: 0;
+  top: 100%;
   left: 0;
   width: 100%;
   height: 100%;
@@ -84,6 +107,7 @@ export default {
   font-size: 16px;
   line-height: 140%;
   font-weight: 400;
+  transition: 0.5s;
 }
 .card__text {
   margin-top: 20px;
