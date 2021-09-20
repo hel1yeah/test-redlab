@@ -13,7 +13,11 @@
 </template>
 
 <script>
-import { gsap, ScrollTrigger, Draggable, MotionPathPlugin } from 'gsap/all'
+import { gsap } from 'gsap'
+
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 
 export default {
   data() {
@@ -46,11 +50,14 @@ export default {
       ],
     }
   },
+  mounted() {
+    this.gsapCardFrom()
+  },
   methods: {
-    cardFrom() {
+    gsapCardFrom() {
       gsap.from('.card', {
-        scrollTrigger: {
-          trigger: '.card',
+        ScrollTrigger: {
+          trigger: '.cards-inner',
           start: 'top bottom',
           toggleActions: 'play none none none',
         },
@@ -61,9 +68,6 @@ export default {
         stagger: 0.4,
       })
     },
-  },
-  mounted() {
-    this.cardFrom()
   },
 }
 </script>
