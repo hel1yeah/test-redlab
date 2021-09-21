@@ -56,12 +56,12 @@ export default {
   methods: {
     gsapCardFrom() {
       gsap.from('.card', {
-        ScrollTrigger: {
-          trigger: '.cards-inner',
+        scrollTrigger: {
+          trigger: '.card',
           start: 'top bottom',
           toggleActions: 'play none none none',
         },
-        duration: 1.5,
+        duration: 1,
         y: 50,
         opacity: 0,
         ease: 'power2.inOut',

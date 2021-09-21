@@ -1,6 +1,6 @@
 <template>
-  <section-home> </section-home>
-  <section-cards> </section-cards>
+  <section-home></section-home>
+  <section-cards></section-cards>
   <section-cleaning></section-cleaning>
 </template>
 

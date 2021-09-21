@@ -45,18 +45,20 @@ export default {
   },
   methods: {
     gsapTitleFrom() {
-      let tl = gsap.timeline()
-      tl.from('.cleaning__title', {
+      let tl = gsap.timeline({
         scrollTrigger: {
-          trigger: '.cleaning__gallery',
+          trigger: '.cleaning__title',
           start: 'top bottom',
           toggleActions: 'play none none none',
         },
+      })
+      tl.from('.cleaning__title', {
         y: 120,
         opacity: 0,
         duration: 1.5,
         ease: 'power3.inOutinOut',
-      }).from(
+      })
+      tl.from(
         '.cleaning__descr',
         {
           y: 120,
@@ -105,7 +107,7 @@ export default {
   display: block;
 }
 .cleaning__gallery {
-  margin-top: 142px;
+  margin-top: 52px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -122,6 +124,7 @@ export default {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  display: none;
 }
 .cleaning__menu-descr {
   position: absolute;
