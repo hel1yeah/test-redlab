@@ -42,6 +42,7 @@ export default {
   },
   mounted() {
     this.gsapTitleFrom()
+    this.gsapGallery()
   },
   methods: {
     gsapTitleFrom() {
@@ -67,6 +68,42 @@ export default {
           ease: 'power3.inOutinOut',
         },
         '-=1'
+      )
+    },
+
+    gsapGallery() {
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.cleaning__gallery',
+          start: 'bottom bottom+=100',
+        },
+      })
+      tl.fromTo(
+        '.cleaning__img',
+        {
+          duration: 2,
+          height: '80%',
+          width: '56%',
+        },
+        {
+          right: '0%',
+          transform: 'translateX(0%)',
+          borderRadius: '0px',
+          height: '100%',
+          width: '77%',
+        }
+      )
+
+      tl.fromTo(
+        '.cleaning__menu-container',
+        {
+          x: '-100%',
+          y: '-200px',
+          opacity: 0,
+          duration: 1.5,
+          ease: 'power3.inOutinOut',
+        },
+        { x: '0%', y: '0px', opacity: 1 }
       )
     },
   },
@@ -99,32 +136,37 @@ export default {
   line-height: 140%;
   max-width: 414px;
 }
+.cleaning__gallery {
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+}
 .cleaning__img {
   border-radius: 8px;
   overflow: hidden;
-  max-width: 1094px;
-  max-height: 630px;
   display: block;
-}
-.cleaning__gallery {
-  margin-top: 52px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: absolute;
+  height: 100%;
+  width: 77%;
+  top: 0;
+  right: 50%;
+  transform: translateX(50%);
+  z-index: 0;
 }
 
 .cleaning__menu-container {
-  width: 375px;
-  height: 800px;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 23%;
+  height: 100%;
   background-color: $purple-color;
-  position: relative;
   color: $primary-color;
-
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  display: none;
 }
 .cleaning__menu-descr {
   position: absolute;
