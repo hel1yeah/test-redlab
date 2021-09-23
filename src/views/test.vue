@@ -1,34 +1,20 @@
 <template>
-  <swiper
-    :slides-per-view="3"
-    :space-between="50"
-    @swiper="onSwiper"
-    @slideChange="onSlideChange"
-  >
-    <swiper-slide>Slide 1</swiper-slide>
-    <swiper-slide>Slide 2</swiper-slide>
-    <swiper-slide>Slide 3</swiper-slide>
-  </swiper>
+  <carousel :per-page="1">
+    <slide> Slide 1 Content </slide>
+    <slide> Slide 2 Content </slide>
+  </carousel>
 </template>
+
 <script>
-import { Swiper, SwiperSlide } from 'swiper/vue'
+import { Carousel, Slide } from 'vue-carousel'
 
 export default {
   components: {
-    Swiper,
-    SwiperSlide,
+    Carousel,
+    Slide,
   },
-  setup() {
-    const onSwiper = (swiper) => {
-      console.log(swiper)
-    }
-    const onSlideChange = () => {
-      console.log('slide change')
-    }
-    return {
-      onSwiper,
-      onSlideChange,
-    }
+  mounted() {
+    console.log(Carousel, 'asdfdsfsdfsdf')
   },
 }
 </script>

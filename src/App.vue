@@ -2,21 +2,21 @@
   <section-home></section-home>
   <section-cards></section-cards>
   <section-cleaning></section-cleaning>
-  <test></test>
+  <TestTestTest></TestTestTest>
 </template>
 
 <script>
 import SectionHome from '@/views/SectionHome.vue'
 import SectionCards from '@/views/SectionCards.vue'
 import SectionCleaning from '@/views/SectionCleaning.vue'
-import Test from './views/test.vue'
+import TestTestTest from '@/views/test.vue'
 
 export default {
   components: {
     SectionHome,
     SectionCards,
     SectionCleaning,
-    Test,
+    TestTestTest,
   },
 }
 </script>
