@@ -72,6 +72,7 @@ export default {
   top: 16px;
   left: 50%;
   transform: translateX(-50%);
+  width: 100%;
 }
 
 .header__inner {
@@ -120,14 +121,14 @@ export default {
   color: $primary-color;
 }
 .header__nav {
+  width: 662px;
+  max-width: 662px;
+  margin: 0 15px;
 }
 .header__nav-list {
   @include myFlex;
   color: $black-color;
   font-size: 16px;
-  font-family: 'TTTravels-Regular', sans-serif;
-  width: 662px;
-  max-width: 662px;
   cursor: pointer;
 }
 .header__nav-list-item {
@@ -147,13 +148,14 @@ export default {
 .header__contacts-inner {
   @include myFlex;
   letter-spacing: 0.2px;
-  width: 228px;
   max-width: 228px;
+  width: 100%;
 }
 
 .header__contacts-link {
   color: $black-color;
   text-decoration: none;
+  word-break: normal;
 }
 .header__contacts-support {
 }
